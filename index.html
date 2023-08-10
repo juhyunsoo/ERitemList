@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>이터널 리턴 아이템 도감</title>
+  <style>
+    ol {
+      list-style: none;
+    }
+
+    td {
+      font-weight: bold;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup-content td {
+      text-align: center;
+    }
+
+    .imgContainer {
+      width: 59px;
+      height: 37px;
+      border-radius: 7px;
+      border: 4px solid black;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+
+    .statsTable {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+    }
+
+    .statsTable th,
+    .statsTable td {
+      border: 1.5px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .statsTable th {
+      background-color: #f2f2f2;
+      margin-top: 500px;
+      border-top-left-radius: 9px;
+      border-top-right-radius: 9px;
+    }
+
+    .statsTable td {
+      border-bottom-left-radius: 9px;
+      border-bottom-right-radius: 9px;
+    }
+
+    .selector {
+      border-top-left-radius: 9px;
+      border-top-right-radius: 9px;
+    }
+
+    .selectorContainer {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .summaryTable {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid gray;
+      border-radius: 9px;
+      overflow: hidden;
+    }
+
+    .summaryTable td {
+      border: 1px solid gray;
+      padding: 8px;
+      width: 25%;
+    }
+
+    [data-color="green"] {
+      background-color: rgba(0, 128, 0, 0.2);
+    }
+
+    [data-color="red"] {
+      background-color: rgba(255, 0, 0, 0.2);
+    }
+
+    [data-color="orange"] {
+      background-color: rgba(255, 165, 0, 0.7);
+    }
+
+    [data-color="gold"] {
+      background-color: gold;
+    }
+
+    [data-color="purple"] {
+      background-color: purple;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="popupContainer" class="popup">
+    <div class="popup-content">
+      <h2>무기 종류를 선택해 주세요</h2>
+      <table>
+        <tr>
+          <td><img class="weaponSelector" src="./media/weapon/knife.png"><br>단검</td>
+          <td><img class="weaponSelector" src="./media/weapon/sword.png"><br>양손검</td>
+          <td><img class="weaponSelector" src="./media/weapon/axe.png"><br>도끼</td>
+          <td><img class="weaponSelector" src="./media/weapon/doubleKnife.png"><br>쌍검</td>
+          <td><img class="weaponSelector" src="./media/weapon/handgun.png"><br>권총</td>
+        </tr>
+        <tr>
+          <td><img class="weaponSelector" src="./media/weapon/rifle.png"><br>돌격소총</td>
+          <td><img class="weaponSelector" src="./media/weapon/sniper.png"><br>저격총</td>
+          <td><img class="weaponSelector" src="./media/weapon/glove.png"><br>글러브</td>
+          <td><img class="weaponSelector" src="./media/weapon/tonfa.png"><br>톤파</td>
+          <td><img class="weaponSelector" src="./media/weapon/hammer.png"><br>망치</td>
+        </tr>
+        <tr>
+          <td><img class="weaponSelector" src="./media/weapon/bat.png"><br>방망이</td>
+          <td><img class="weaponSelector" src="./media/weapon/pierce.png"><br>레이피어</td>
+          <td><img class="weaponSelector" src="./media/weapon/spear.png"><br>창</td>
+          <td><img class="weaponSelector" src="./media/weapon/bow.png"><br>활</td>
+          <td><img class="weaponSelector" src="./media/weapon/bolt.png"><br>석궁</td>
+        </tr>
+        <tr>
+          <td><img class="weaponSelector" src="./media/weapon/throwable.png"><br>투척</td>
+          <td><img class="weaponSelector" src="./media/weapon/razor.png"><br>암기</td>
+          <td><img class="weaponSelector" src="./media/weapon/guitar.png"><br>기타</td>
+          <td><img class="weaponSelector" src="./media/weapon/chainStick.png"><br>쌍절곤</td>
+          <td><img class="weaponSelector" src="./media/weapon/whip.png"><br>채찍</td>
+        </tr>
+        <tr>
+          <td><img class="weaponSelector" src="./media/weapon/camera.png"><br>카메라</td>
+          <td><img class="weaponSelector" src="./media/weapon/mage.png"><br>아르카나</td>
+          <td><img class="weaponSelector" src="./media/weapon/VF.png"><br>VF의수</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <table id="container">
+    <tbody>
+      <tr>
+        <td>
+          <table class="statsTable">
+            <tbody>
+              <tr>
+                <th>공격력</th>
+                <th>스증</th>
+                <th>시야</th>
+                <th>사거리</th>
+              </tr>
+              <tr>
+                <td class="atk"></td>
+                <td class="skill"></td>
+                <td class="sight"></td>
+                <td class="range"></td>
+              </tr>
+              <tr>
+                <th>기공증</th>
+                <th>방어력</th>
+                <th>피해감소</th>
+                <th>저항력</th>
+              </tr>
+              <tr>
+                <td class="basicATK"></td>
+                <td class="def"></td>
+                <td class="reduce"></td>
+                <td class="resist"></td>
+              </tr>
+              <tr>
+                <th>공격속도</th>
+                <th>쿨감</th>
+                <th>방관</th>
+                <th>피흡</th>
+              </tr>
+              <tr>
+                <td class="atkSPD"></td>
+                <td class="cooltime"></td>
+                <td class="AP"></td>
+                <td class="heal"></td>
+              </tr>
+              <tr>
+                <th>치명타</th>
+                <th>이속</th>
+                <th>체력</th>
+                <th>스태미나</th>
+              </tr>
+              <tr>
+                <td class="crit"></td>
+                <td class="speed"></td>
+                <td class="hp"></td>
+                <td class="mp"></td>
+              </tr>
+              <tr>
+                <th colspan="4">고유 능력
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="original">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="selector" colspan="4">
+          <div class="selectorContainer">
+            <div class="imgContainer"><img class="popupButton" src="./media/weapon/basic.png"></div>
+            <div class="imgContainer"><img class="clothBtn" src="./media/cloth/basic.png"></div>
+            <div class="imgContainer"><img class="headBtn" src="./media/head/basic.png"></div>
+            <div class="imgContainer"><img class="armBtn" src="./media/arm/basic.png"></div>
+            <div class="imgContainer"><img class="legBtn" src="./media/leg/basic.png"></div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </td>
+  <td>
+    <table class="statsTable">
+      <tbody>
+        <tr>
+          <th>공격력</th>
+          <th>스증</th>
+          <th>시야</th>
+          <th>사거리</th>
+        </tr>
+        <tr>
+          <td class="atk"></td>
+          <td class="skill"></td>
+          <td class="sight"></td>
+          <td class="range"></td>
+        </tr>
+        <tr>
+          <th>기공증</th>
+          <th>방어력</th>
+          <th>피해 감소</th>
+          <th>저항력</th>
+        </tr>
+        <tr>
+          <td class="basicATK"></td>
+          <td class="def"></td>
+          <td class="reduce"></td>
+          <td class="resist"></td>
+        </tr>
+        <tr>
+          <th>공격속도</th>
+          <th>쿨감</th>
+          <th>방관</th>
+          <th>피흡</th>
+        </tr>
+        <tr>
+          <td class="atkSPD"></td>
+          <td class="cooltime"></td>
+          <td class="AP"></td>
+          <td class="heal"></td>
+        </tr>
+        <tr>
+          <th>치명타</th>
+          <th>이속</th>
+          <th>체력</th>
+          <th>스테미나</th>
+        </tr>
+        <tr>
+          <td class="crit"></td>
+          <td class="speed"></td>
+          <td class="hp"></td>
+          <td class="mp"></td>
+        </tr>
+        <tr>
+          <th colspan="4">고유 능력
+  </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="original">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="selector" colspan="4">
+      <div class="selectorContainer">
+        <div class="imgContainer"><img class="popupButton" src="./media/weapon/basic.png"></div>
+        <div class="imgContainer"><img class="clothBtn" src="./media/cloth/basic.png"></div>
+        <div class="imgContainer"><img class="headBtn" src="./media/head/basic.png"></div>
+        <div class="imgContainer"><img class="armBtn" src="./media/arm/basic.png"></div>
+        <div class="imgContainer"><img class="legBtn" src="./media/leg/basic.png"></div>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+  </table>
+  </td>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <details>
+        <summary>옵션</summary>
+        <table class="summaryTable">
+          <tr>
+            <td><label><input type="checkbox" value="atk">공격력</label></td>
+            <td><label><input type="checkbox" value="skill">스증</label></td>
+            <td><label><input type="checkbox" value="sight">시야</label></td>
+            <td><label><input type="checkbox" value="range">사거리</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" value="basicATK">기공증</label></td>
+            <td><label><input type="checkbox" value="def">방어력</label></td>
+            <td><label><input type="checkbox" value="atkReduce">피해 감소</label></td>
+            <td><label><input type="checkbox" value="resist">저항력</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" value="atkSPD">공속</label></td>
+            <td><label><input type="checkbox" value="cooltime">쿨감</label></td>
+            <td><label><input type="checkbox" value="AP">방관</label></td>
+            <td>
+              <label><input type="checkbox" value="atkheal">기본 공격 흡혈</label><br>
+              <label><input type="checkbox" value="skillheal">모든 피해 흡혈</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><input type="checkbox" value="crit">치명타 확률</label><br>
+              <label><input type="checkbox" value="critD">치명타 피해량</label>
+            </td>
+            <td><label><input type="checkbox" value="speed">이속</label></td>
+            <td>
+              <label><input type="checkbox" value="hp">체력</label><br>
+              <label><input type="checkbox" value="hpRegen">체력재생</label>
+            </td>
+            <td>
+              <label><input type="checkbox" value="mp">스태미나</label><br>
+              <label><input type="checkbox" value="mpRegen">스태미나 재생</label>
+            </td>
+          </tr>
+        </table>
+      </details>
+    </td>
+  </tr>
+  </tbody>
+  </table>
+
+  <div>
+    <ol id="itemList"></ol>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="setup.js"></script>
+</body>
+
+</html>
