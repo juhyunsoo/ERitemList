@@ -7853,7 +7853,7 @@
         }
     },
     {
-        "name": "./media/weapon/투척/안티오크의 수류탄.png",
+        "name": "./media/weapon/투척/전설/안티오크의 수류탄.png",
         "type": "weapon",
         "weaponType": "throwable",
         "str": "공격력 87, 공격 속도 20%, 사거리 0.5",
@@ -7887,7 +7887,7 @@
         }
     },
     {
-        "name": "./media/weapon/투척/파이어 볼.png",
+        "name": "./media/weapon/투척/전설/파이어 볼.png",
         "type": "weapon",
         "weaponType": "throwable",
         "str": "공격력 45, 스증 67, 공격 속도 20%, 충전-섬광",
@@ -7921,7 +7921,7 @@
         }
     },
     {
-        "name": "./media/weapon/투척/프리즘 볼.png",
+        "name": "./media/weapon/투척/전설/프리즘 볼.png",
         "type": "weapon",
         "weaponType": "throwable",
         "str": "공격력 78, 공격 속도 20%, 열정",
@@ -7955,7 +7955,7 @@
         }
     },
     {
-        "name": "./media/weapon/투척/여의주.png",
+        "name": "./media/weapon/투척/전설/여의주.png",
         "type": "weapon",
         "weaponType": "throwable",
         "str": "공격력 42, 스증 81, 스킬 치감",
