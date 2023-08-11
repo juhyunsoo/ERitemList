@@ -13,6 +13,15 @@
   }
 }
 
+#itemList {
+  border-spacing: 0 6px;
+}
+
+#itemList td {
+  padding-bottom : 6px;
+  border-bottom : 1px solid gray;
+}
+
 summary,
 #itemList,
 .summaryTable td label,
@@ -30,7 +39,7 @@ body {
 
 .wrapper {
   background-color: white;
-  width: 750px;
+  width: 721.25px;
   padding: 50px;
   margin-left: auto;
   margin-right: auto;
@@ -159,4 +168,8 @@ img {
 
 [data-color="purple"] {
   background-color: purple;
+}
+
+[data-color="orangeB"] {
+  background-color: orange;
 }

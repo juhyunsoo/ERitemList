@@ -19,6 +19,13 @@ function closeWeapon(itemType) {
     popupContainer.style.display = "none";
     filterItems("weapon", selectedWeaponI);
 }
+//경로로부터 파일명을 추출한다.
+function returnRealname(str) {
+    const temp = str.split("/");
+    const fileName = temp[temp.length - 1];
+    const res = fileName.split(".png");
+    return res[0];
+}
 //선택한 옵션을 배열형태로 반환
 function getOptions() {
     const selectedOptions = [];
@@ -67,11 +74,18 @@ function filterItems(type, i) {
         }
         //리스트에 추가
         if (item.type === type && isOption == true) {
-            if(item.name.indexOf("전설") == -1) {
-                colorType = "purple";
+            let realName = returnRealname(item.name);
+            let colorType;
+            if (item.name.indexOf("전용") == -1) {
+                if (item.name.indexOf("전설") == -1) {
+                    colorType = "purple";
+                }
+                else {
+                    colorType = "gold";
+                }
             }
             else {
-                colorType = "gold";
+                colorType = "orangeB";
             }
             const tr = document.createElement("tr");
             const td = document.createElement("td");
@@ -89,7 +103,7 @@ function filterItems(type, i) {
             td.appendChild(imgContainer);
             tr.appendChild(td);
 
-            td2.innerHTML = item.str;
+            td2.innerHTML = realName + "<br>" + item.str;
             tr.appendChild(td2);
             tr.addEventListener("click", () => equipItem(item, temp));
             itemList.appendChild(tr);
@@ -126,11 +140,16 @@ function disbaleItem(item, i) {
 function equipItem(item, i) {
     console.log("equipped" + item.type + i);
     let colorType;
-    if(item.name.indexOf("전설") == -1) {
-        colorType = "purple";
+    if (item.name.indexOf("전용") == -1) {
+        if (item.name.indexOf("전설") == -1) {
+            colorType = "purple";
+        }
+        else {
+            colorType = "gold";
+        }
     }
     else {
-        colorType = "gold";
+        colorType = "orangeB";
     }
 
     if (item.type === "weapon") {
