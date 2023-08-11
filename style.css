@@ -1,0 +1,139 @@
+@media (max-width: 700px) {
+    #leftTable {
+      display: none;
+    }
+    body {
+        background-color: white !important;
+    }
+  }
+
+  body {
+    background-color: black;
+  }
+
+  .wrapper {
+    background-color: white;
+    width : 706px;
+    padding: 50px;
+    margin-left: auto;
+    margin-right:auto;
+  }
+
+  #leftTable {
+    float: left;
+  }
+
+  ol {
+    list-style: none;
+    width : 100%;
+  }
+
+  td {
+    font-weight: bold;
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .popup-content td {
+    text-align: center;
+  }
+
+  .imgContainer {
+    width: 59px;
+    height: 37px;
+    border-radius: 7px;
+    border: 4px solid black;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  .statsTable {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .statsTable th,
+  .statsTable td {
+    border: 1.5px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .statsTable th {
+    background-color: #f2f2f2;
+    margin-top: 500px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+  }
+
+  .statsTable td {
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+  }
+
+  .selector {
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+  }
+
+  .selectorContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .summaryTable {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid gray;
+    border-radius: 9px;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .summaryTable td {
+    border: 1px solid gray;
+    padding: 8px;
+    width: 25%;
+  }
+
+  [data-color="green"] {
+    background-color: rgba(0, 128, 0, 0.2);
+  }
+
+  [data-color="red"] {
+    background-color: rgba(255, 0, 0, 0.2);
+  }
+
+  [data-color="orange"] {
+    background-color: rgba(255, 165, 0, 0.7);
+  }
+
+  [data-color="gold"] {
+    background-color: gold;
+  }
+
+  [data-color="purple"] {
+    background-color: purple;
+  }
