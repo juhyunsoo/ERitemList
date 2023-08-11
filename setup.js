@@ -1,6 +1,7 @@
 //아이템 리스트
 const itemList = document.getElementById("itemList");
-
+//소수점 연산을 위한 곱셈 단위
+const precision = 100;
 //팝업 창
 const popupButton = document.getElementsByClassName('popupButton');
 const popupContainer = document.getElementById('popupContainer');

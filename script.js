@@ -244,7 +244,7 @@ function updateStatsTable(i) {
     tdAP[i].innerHTML = totalStats[i].AP + " | " + totalStats[i].APper + "%";
     tdHEAL[i].innerHTML = totalStats[i].atkheal + "% | " + totalStats[i].skillheal + "%";
     tdCRIT[i].innerHTML = totalStats[i].crit + "% | " + totalStats[i].critD + "%";
-    tdSPEED[i].innerHTML = totalStats[i].speed;
+    tdSPEED[i].innerHTML = totalStats[i].speed/precision;
     tdHP[i].innerHTML = totalStats[i].hp + " | " + totalStats[i].hpRegen + "%";
     tdMP[i].innerHTML = totalStats[i].mp + " | " + Math.floor(totalStats[i].mpRegen) + "%";
     tdORIGINAL[i].innerHTML = totalStats[i].original;
