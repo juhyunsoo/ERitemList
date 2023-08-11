@@ -37,6 +37,12 @@ const headBtn = document.getElementsByClassName("headBtn");
 const armBtn = document.getElementsByClassName("armBtn");
 const legBtn = document.getElementsByClassName("legBtn");
 
+const weaponImgContainer = document.getElementsByClassName("weaponImgContainer");
+const clothImgContainer = document.getElementsByClassName("clothImgContainer");
+const headImgContainer = document.getElementsByClassName("headImgContainer");
+const armImgContainer = document.getElementsByClassName("armImgContainer");
+const legImgContainer = document.getElementsByClassName("legImgContainer");
+
 //스탯합
 const tdATK = document.getElementsByClassName("atk");
 const tdSKILL = document.getElementsByClassName("skill");
@@ -160,7 +166,10 @@ for (let temp = 0; temp < 2; temp++) {
 for (let temp = 0; temp < 23; temp++) {
     weaponSelector[temp].addEventListener("click", () => closeWeapon(weaponName[temp]));
 }
-
+itemList.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    itemList.innerHTML = "";
+});
 //로드 완료시 코드 실행
 document.addEventListener("DOMContentLoaded", () => {
     loadItems();

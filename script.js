@@ -67,12 +67,19 @@ function filterItems(type, i) {
         }
         //리스트에 추가
         if (item.type === type && isOption == true) {
+            if(item.name.indexOf("전설") == -1) {
+                colorType = "purple";
+            }
+            else {
+                colorType = "gold";
+            }
             const tr = document.createElement("tr");
             const td = document.createElement("td");
             const td2 = document.createElement("td");
 
             const imgContainer = document.createElement("div");
             imgContainer.setAttribute("class", "imgContainer");
+            imgContainer.setAttribute("data-color", colorType);
 
             const img = document.createElement("img");
             img.src = item.name;
@@ -93,6 +100,7 @@ function filterItems(type, i) {
         itemList.innerHTML = "조건에 맞는 아이템이 없습니다.";
     }
 }
+//아이템 착용해제
 function disbaleItem(item, i) {
     console.log("unequip" + item)
     if (item === "weapon") {
@@ -117,26 +125,39 @@ function disbaleItem(item, i) {
 // 아이템 착용
 function equipItem(item, i) {
     console.log("equipped" + item.type + i);
+    let colorType;
+    if(item.name.indexOf("전설") == -1) {
+        colorType = "purple";
+    }
+    else {
+        colorType = "gold";
+    }
+
     if (item.type === "weapon") {
         equippedWeapon[i] = item;
         popupButton[i].src = item.name;
         popupButton[i].alt = "no image " + item.name;
+        weaponImgContainer[i].setAttribute("data-color", colorType);
     } else if (item.type === "cloth") {
         equippedCloth[i] = item;
         armorBtn[i].src = item.name;
         armorBtn[i].alt = "no image " + item.name;
+        clothImgContainer[i].setAttribute("data-color", colorType);
     } else if (item.type == "head") {
         equippedHead[i] = item;
         headBtn[i].src = item.name;
         headBtn[i].alt = "no image " + item.name;
+        headImgContainer[i].setAttribute("data-color", colorType);
     } else if (item.type == "arm") {
         equippedArm[i] = item;
         armBtn[i].src = item.name;
         armBtn[i].alt = "no image " + item.name;
+        armImgContainer[i].setAttribute("data-color", colorType);
     } else if (item.type == "leg") {
         equippedLeg[i] = item;
         legBtn[i].src = item.name;
         legBtn[i].alt = "no image " + item.name;
+        legImgContainer[i].setAttribute("data-color", colorType);
     }
 
     updateStatsTable(i);

@@ -627,7 +627,7 @@
         }
     },
     {
-        "name": "./media/cloth/마이 제작/미스릴 크롭.png",
+        "name": "./media/cloth/전설/마이 제작/미스릴 크롭.png",
         "type": "cloth",
         "str": "방어력 40, 성장형 체력 25, 이동 속도 0.12, 쿨감 15%",
         "stats": {
@@ -990,7 +990,7 @@
         }
     },
     {
-        "name": "./media/cloth/마이 제작/아오자이.png",
+        "name": "./media/cloth/전설/마이 제작/아오자이.png",
         "type": "cloth",
         "str": "공격력 31, 성장형 공격력 3, 방어력 20, 스태미나 재생 100%, 쿨감 18%",
         "stats": {
@@ -1023,7 +1023,7 @@
         }
     },
     {
-        "name": "./media/cloth/마이 제작/팬텀 자켓.png",
+        "name": "./media/cloth/전설/마이 제작/팬텀 자켓.png",
         "type": "cloth",
         "str": "공격력 5, 방어력 25, 성장형 체력 28, 불꽃 결계",
         "stats": {
