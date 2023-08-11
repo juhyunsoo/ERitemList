@@ -627,39 +627,6 @@
         }
     },
     {
-        "name": "./media/cloth/마이 전용/미스릴 크롭.png",
-        "type": "cloth",
-        "str": "방어력 40, 성장형 체력 25, 이동 속도 0.12, 쿨감 15%",
-        "stats": {
-            "atk": 0,
-            "def": 40,
-            "skill": 0,
-            "adjATK": 0,
-            "adjSKILL": 0,
-            "basicATK": 0,
-            "atkSPD": 0,
-            "crit": 0,
-            "critD": 0,
-            "cooltime": 15,
-            "speed": 0.12,
-            "critReduce": 0,
-            "atkReduce": 0,
-            "skillReduce": 0,
-            "mp": 0,
-            "mpRegen": 0,
-            "hp": 500,
-            "hpRegen": 0,
-            "AP": 0,
-            "APper": 0,
-            "resist": 0,
-            "atkheal": 0,
-            "skillheal": 0,
-            "range": 0,
-            "sight": 0,
-            "original": ""
-        }
-    },
-    {
         "name": "./media/cloth/전설/카바나.png",
         "type": "cloth",
         "str": "방어력 22, 스증 40, 성장형 스증 5",
@@ -987,6 +954,39 @@
             "range": 0,
             "sight": 0,
             "original": "평타 치감"
+        }
+    },
+    {
+        "name": "./media/cloth/마이 전용/미스릴 크롭.png",
+        "type": "cloth",
+        "str": "방어력 40, 성장형 체력 25, 이동 속도 0.12, 쿨감 15%",
+        "stats": {
+            "atk": 0,
+            "def": 40,
+            "skill": 0,
+            "adjATK": 0,
+            "adjSKILL": 0,
+            "basicATK": 0,
+            "atkSPD": 0,
+            "crit": 0,
+            "critD": 0,
+            "cooltime": 15,
+            "speed": 0.12,
+            "critReduce": 0,
+            "atkReduce": 0,
+            "skillReduce": 0,
+            "mp": 0,
+            "mpRegen": 0,
+            "hp": 500,
+            "hpRegen": 0,
+            "AP": 0,
+            "APper": 0,
+            "resist": 0,
+            "atkheal": 0,
+            "skillheal": 0,
+            "range": 0,
+            "sight": 0,
+            "original": ""
         }
     },
     {
@@ -2510,7 +2510,7 @@
     {
         "name": "./media/arm/전설/가시지네 견갑.png",
         "type": "arm",
-        "str": "방어력, 평타 뎀감 9%, 리플렉션",
+        "str": "방어력 24, 평타 뎀감 9%, 리플렉션",
         "stats": {
             "atk": 0,
             "def": 24,

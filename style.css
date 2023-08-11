@@ -13,6 +13,10 @@
   }
 }
 
+.listImgTd {
+  width: 80px;
+}
+
 #itemList {
   border-spacing: 0 6px;
 }

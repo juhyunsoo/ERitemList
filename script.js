@@ -101,6 +101,7 @@ function filterItems(type, i) {
 
             imgContainer.appendChild(img);
             td.appendChild(imgContainer);
+            td.setAttribute("class", "listImgTd")
             tr.appendChild(td);
 
             td2.innerHTML = realName + "<br>" + item.str;
