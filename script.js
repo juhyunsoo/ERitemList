@@ -93,6 +93,27 @@ function filterItems(type, i) {
         itemList.innerHTML = "조건에 맞는 아이템이 없습니다.";
     }
 }
+function disbaleItem(item, i) {
+    console.log("unequip" + item)
+    if (item === "weapon") {
+        equippedWeapon[i] = null;
+        popupButton[i].src = "./media/weapon/basic.png";
+    } else if (item === "cloth") {
+        equippedCloth[i] = null;
+        armorBtn[i].src = "./media/cloth/basic.png";
+    } else if (item == "head") {
+        equippedHead[i] = null;
+        headBtn[i].src = "./media/head/basic.png";
+    } else if (item == "arm") {
+        equippedArm[i] = null;
+        armBtn[i].src = "./media/arm/basic.png";
+    } else if (item == "leg") {
+        equippedLeg[i] = null;
+        legBtn[i].src = "./media/leg/basic.png";
+    }
+
+    updateStatsTable(i);
+}
 // 아이템 착용
 function equipItem(item, i) {
     console.log("equipped" + item.type + i);
@@ -169,8 +190,8 @@ function updateStatsTable(i) {
     }
     //html에 반영
     console.log(totalStats);
-    tdATK[i].innerHTML = totalStats[i].atk + "(" + totalStats[i].adjATK + ")";
-    tdSKILL[i].innerHTML = totalStats[i].skill + "(" + totalStats[i].adjSKILL + ")";
+    tdATK[i].innerHTML = totalStats[i].atk + "(+" + totalStats[i].adjATK + ")";
+    tdSKILL[i].innerHTML = totalStats[i].skill + "(+" + totalStats[i].adjSKILL + ")";
     tdSIGHT[i].innerHTML = totalStats[i].sight;
     tdRANGE[i].innerHTML = totalStats[i].range;
     tdBASICATK[i].innerHTML = totalStats[i].basicATK + "%";
@@ -339,6 +360,12 @@ function comp() {
     else {
         tdCOOLTIME[1].setAttribute("data-color", "");
         tdCOOLTIME[0].setAttribute("data-color", "");
+    }
+    if (totalStats[0].cooltime > 30) {
+        tdCOOLTIME[0].setAttribute("data-color", "orange");
+    }
+    if (totalStats[1].cooltime > 30) {
+        tdCOOLTIME[1].setAttribute("data-color", "orange");
     }
     //=======================================================
     if (totalStats[0].AP == totalStats[1].AP &&

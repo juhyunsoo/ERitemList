@@ -69,8 +69,8 @@ let totalStats = [
         "atk": 0,
         "def": 0,
         "skill": 0,
-        "adjATK" : 0,
-        "adjSKILL" : 0,
+        "adjATK": 0,
+        "adjSKILL": 0,
         "basicATK": 0,
         "atkSPD": 0,
         "crit": 0,
@@ -97,8 +97,8 @@ let totalStats = [
         "atk": 0,
         "def": 0,
         "skill": 0,
-        "adjATK" : 0,
-        "adjSKILL" : 0,
+        "adjATK": 0,
+        "adjSKILL": 0,
         "basicATK": 0,
         "atkSPD": 0,
         "crit": 0,
@@ -132,10 +132,30 @@ let equippedLeg = [null, null];
 for (let temp = 0; temp < 2; temp++) {
     //weaponBtn[temp].addEventListener("click", () => filterItems("weapon", temp));
     armorBtn[temp].addEventListener("click", () => filterItems("cloth", temp));
+    armorBtn[temp].addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        disbaleItem("cloth", temp)
+    });
     headBtn[temp].addEventListener("click", () => filterItems("head", temp));
+    headBtn[temp].addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        disbaleItem("head", temp)
+    });
     armBtn[temp].addEventListener("click", () => filterItems("arm", temp));
+    armBtn[temp].addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        disbaleItem("arm", temp)
+    });
     legBtn[temp].addEventListener("click", () => filterItems("leg", temp));
+    legBtn[temp].addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        disbaleItem("leg", temp)
+    });
     popupButton[temp].addEventListener("click", () => openWeapon(temp));
+    popupButton[temp].addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        disbaleItem("weapon", temp)
+    });
 }
 for (let temp = 0; temp < 23; temp++) {
     weaponSelector[temp].addEventListener("click", () => closeWeapon(weaponName[temp]));

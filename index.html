@@ -49,9 +49,57 @@
     </div>
   </div>
   <div class="wrapper">
+    <details>
+      <summary>도움말?</summary>
+      <table>
+        <tr>
+          <td>1. 피해 감소</td>
+          <td>: 평타 피해 감소(%) | 스킬 피해 감소(%)</td>
+        </tr>
+        <tr>
+          <td>2. 피흡</td>
+          <td>: 기본 공격 흡혈(%) | 모든 피해 흡혈(%)</td>
+        </tr>
+        <tr>
+          <td>3. 체력/스태미나</td>
+          <td>: 최대치 증가량 | 재생량(%)</td>
+        </tr>
+        <tr>
+          <td>4. 치명타</td>
+          <td>: 치명타 확률(%) | 치명타 피해량(%)</td>
+        </tr>
+        <tr>
+          <td>5. 쿨타임 감소</td>
+          <td>: 기본 최대치(30%) 초과시 주황색으로 표시</td>
+        </tr>
+        <tr>
+          <td>6. 적응형 능력치</td>
+          <td>: (괄호) 안에 표기</td>
+        </tr>
+        <tr>
+          <td>7. 성장형 능력치</td>
+          <td>: 20레벨 기준으로 합산하여 표기(인게임 규칙을 따름)</td>
+        </tr>
+        <tr>
+          <td>8. 옵션</td>
+          <td>: 여러 스탯을 체크한 경우, 하나라도 충족하는 아이템을 필터링</td>
+        </tr>
+      </table>
+    </details>
     <div class="tableWrapper">
       <table id="leftTable" class="statsTable">
         <tbody>
+          <tr>
+            <td class="selector" colspan="4">
+              <div class="selectorContainer">
+                <div class="imgContainer"><img class="popupButton" src="./media/weapon/basic.png"></div>
+                <div class="imgContainer"><img class="clothBtn" src="./media/cloth/basic.png"></div>
+                <div class="imgContainer"><img class="headBtn" src="./media/head/basic.png"></div>
+                <div class="imgContainer"><img class="armBtn" src="./media/arm/basic.png"></div>
+                <div class="imgContainer"><img class="legBtn" src="./media/leg/basic.png"></div>
+              </div>
+            </td>
+          </tr>
           <tr>
             <th>공격력</th>
             <th>스증</th>
@@ -107,6 +155,15 @@
           <tr>
             <td colspan="4" class="original">&nbsp;</td>
           </tr>
+        </tbody>
+      </table>
+      <table class="tableDivider">
+        <tr>
+          <td>&nbsp;&nbsp;</td>
+        </tr>
+      </table>
+      <table id="rightTable" class="statsTable">
+        <tbody>
           <tr>
             <td class="selector" colspan="4">
               <div class="selectorContainer">
@@ -118,10 +175,6 @@
               </div>
             </td>
           </tr>
-        </tbody>
-      </table>
-      <table id="rightTable" class="statsTable">
-        <tbody>
           <tr>
             <th>공격력</th>
             <th>스증</th>
@@ -176,17 +229,6 @@
           </tr>
           <tr>
             <td colspan="4" class="original">&nbsp;</td>
-          </tr>
-          <tr>
-            <td class="selector" colspan="4">
-              <div class="selectorContainer">
-                <div class="imgContainer"><img class="popupButton" src="./media/weapon/basic.png"></div>
-                <div class="imgContainer"><img class="clothBtn" src="./media/cloth/basic.png"></div>
-                <div class="imgContainer"><img class="headBtn" src="./media/head/basic.png"></div>
-                <div class="imgContainer"><img class="armBtn" src="./media/arm/basic.png"></div>
-                <div class="imgContainer"><img class="legBtn" src="./media/leg/basic.png"></div>
-              </div>
-            </td>
           </tr>
         </tbody>
       </table>
