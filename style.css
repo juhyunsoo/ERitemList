@@ -2,8 +2,12 @@
     #leftTable {
       display: none;
     }
+    #rightTable {
+        width : 100%
+    }
     body {
         background-color: white !important;
+        background-image: none !important;
     }
   }
 
@@ -23,13 +27,15 @@
     float: left;
   }
 
-  ol {
+  #itemList {
     list-style: none;
     width : 100%;
   }
 
   td {
+    vertical-align: top;
     font-weight: bold;
+    padding: 0;
   }
 
   .popup {
@@ -68,7 +74,7 @@
     max-height: 100%;
     max-width: 100%;
   }
-
+  
   .statsTable {
     border-collapse: separate;
     border-spacing: 0;

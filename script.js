@@ -67,8 +67,6 @@ function filterItems(type, i) {
         }
         //리스트에 추가
         if (item.type === type && isOption == true) {
-            const li = document.createElement("li");
-            const tableContainer = document.createElement("table");
             const tr = document.createElement("tr");
             const td = document.createElement("td");
             const td2 = document.createElement("td");
@@ -82,19 +80,12 @@ function filterItems(type, i) {
 
             imgContainer.appendChild(img);
             td.appendChild(imgContainer);
-
-            const innerUl = document.createElement("ul");
-            const li2 = document.createElement("li");
-            li2.textContent = item.str;
-            innerUl.appendChild(li2);
-            td2.appendChild(innerUl);
-
             tr.appendChild(td);
+
+            td2.innerHTML = item.str;
             tr.appendChild(td2);
-            tableContainer.appendChild(tr);
-            li.appendChild(tableContainer);
-            li.addEventListener("click", () => equipItem(item, temp));
-            itemList.appendChild(li);
+            tr.addEventListener("click", () => equipItem(item, temp));
+            itemList.appendChild(tr);
         }
     }
     //리스트가 비어 있는 경우 처리
