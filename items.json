@@ -6020,10 +6020,10 @@
         "name": "./media/weapon/망치/다그다의 망치.png",
         "type": "weapon",
         "weaponType": "hammer",
-        "str": "공격력 100, 체력 재생 80%",
+        "str": "공격력 95, 방어력 10, 체력 재생 80%",
         "stats": {
-            "atk": 100,
-            "def": 0,
+            "atk": 95,
+            "def": 10,
             "skill": 0,
             "adjATK": 0,
             "adjSKILL": 0,
